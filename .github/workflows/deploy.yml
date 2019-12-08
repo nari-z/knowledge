@@ -18,7 +18,7 @@ jobs:
       env:
         HUGO_VERSION: 0.60.1
     - name: Generate web-site.
-      run: hugo
+      run: hugo --minify
       env:
         HUGO_ENV: production
     - name: Setup git config
