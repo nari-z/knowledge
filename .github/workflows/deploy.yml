@@ -43,6 +43,7 @@ jobs:
         cd ./nari-z.github.io
         git diff --exit-code
         not_updated="$(git diff --exit-code)"
+        not_updated=0
         echo $not_updated
         if [not_updated == 0]; then
         echo 'not updated'
