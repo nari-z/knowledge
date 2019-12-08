@@ -30,6 +30,8 @@ jobs:
       run: |
         ls
         pwd
+        latest_commit_message="$(git log -1 | tail -1)"
+        echo $latest_commit_message
         git remote -v
         cd ./nari-z.github.io
         git remote -v
