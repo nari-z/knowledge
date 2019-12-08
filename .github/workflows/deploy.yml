@@ -31,3 +31,5 @@ jobs:
         ls
         pwd
         git remote -v
+        cd ./public
+        git remote -v
