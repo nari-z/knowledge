@@ -26,28 +26,11 @@ jobs:
         git config --global user.name ${{ secrets.GIT_USER }}
         git config --global user.email ${{ secrets.GIT_MAILADDRESS }}
         git clone https://${{ secrets.GIT_USER }}:${{ secrets.GITHUB_TOKEN }}@github.com/nari-z/nari-z.github.io.git
-    - name: debug code.
-      run: |
-        ls
-        pwd
-        git remote -v
-        cd ./nari-z.github.io
-        git remote -v
-        cd ../
-        git remote -v
     - name: Deploy to GitHub Pages.
       run: |
         latest_commit_message="$(git log -1 | tail -1)"
-        echo $latest_commit_message
         cp -rf ./public/* ./nari-z.github.io
         cd ./nari-z.github.io
-        git diff --exit-code
-        not_updated="$(git diff --exit-code)"
-        not_updated=0
-        echo $not_updated
-        if [not_updated == 0]; then
-        echo 'not updated'
-        exit 0
-        fi
         git add .
-        git status
+        git commit -m $latest_commit_message
+        git push origin master
