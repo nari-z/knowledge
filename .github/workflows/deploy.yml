@@ -30,8 +30,6 @@ jobs:
       run: |
         ls
         pwd
-        latest_commit_message="$(git log -1 | tail -1)"
-        echo $latest_commit_message
         git remote -v
         cd ./nari-z.github.io
         git remote -v
@@ -39,7 +37,15 @@ jobs:
         git remote -v
     - name: Deploy to GitHub Pages.
       run: |
+        latest_commit_message="$(git log -1 | tail -1)"
+        echo $latest_commit_message
         cp -rf ./public/* ./nari-z.github.io
         cd ./nari-z.github.io
+        notUpdated=git diff --exit-code
+        echo $notUpdated
+        if [notUpdated == 0] then
+        echo 'not updated'
+        exit 0
+        fi
         git add .
         git status
