@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "http://example.org/"
+baseurl = "https://nari-z.github.io/"
 languageCode = "en"
 title = "stock"
 theme = "hugo-theme-cactus-plus"
