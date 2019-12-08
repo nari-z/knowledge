@@ -31,9 +31,7 @@ jobs:
         ls
         pwd
         git remote -v
-        cd ./public
-        git remote -v
-        git remote set-url origin https://${{ secrets.GIT_USER }}:${{ secrets.GITHUB_TOKEN }}@github.com/nari-z/nari-z.github.io.git
+        cd ./nari-z.github.io
         git remote -v
         cd ../
         git remote -v
