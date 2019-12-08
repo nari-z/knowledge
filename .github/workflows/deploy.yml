@@ -32,5 +32,5 @@ jobs:
         cp -rf ./public/* ./nari-z.github.io
         cd ./nari-z.github.io
         git add .
-        git commit -m $latest_commit_message
+        git commit -m "${ latest_commit_message }"
         git push origin master
