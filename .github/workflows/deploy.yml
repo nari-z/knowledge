@@ -39,8 +39,7 @@ jobs:
         git remote -v
     - name: Deploy to GitHub Pages.
       run: |
-        ls -la ./public
-        ls -la ./nari-z.github.io
-        cp -rfa ./public/* ./nari-z.github.io
-        ls -la ./public
-        ls -la ./nari-z.github.io
+        cp -rf ./public/* ./nari-z.github.io
+        cd ./nari-z.github.io
+        git add .
+        git status
