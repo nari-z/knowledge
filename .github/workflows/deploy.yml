@@ -41,6 +41,7 @@ jobs:
         echo $latest_commit_message
         cp -rf ./public/* ./nari-z.github.io
         cd ./nari-z.github.io
+        git diff --exit-code
         not_updated="$(git diff --exit-code)"
         echo $not_updated
         if [not_updated == 0]; then
