@@ -9,15 +9,15 @@ stock self knowledge.
 
 ### add post
 
-'''
+```
 hugo new posts/example.md
-'''
+```
 
 ### launch local server
 
-'''
+```
 hugo server -D
-'''
+```
 
 ## Site URL
 
